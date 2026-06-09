@@ -5,41 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sagamiyun</title>
 <style>
-  :root { --fg:#1a1a1a; --muted:#888; --line:#ececec; }
-  @media (prefers-color-scheme: dark){
-    :root { --fg:#eaeaea; --muted:#7d7d7d; --line:#262626; }
-    html,body { background:#121212; }
+  :root{
+    --fg:#1b1b1b; --muted:#9a9a9a; --rule:#ededed; --accent:#3b5bdb;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC",serif;
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
   }
-  * { box-sizing:border-box; }
-  html { -webkit-text-size-adjust:100%; }
-  body {
-    font: 16px/1.65 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
-    color:var(--fg); max-width:560px; margin:0 auto; padding:18vh 28px 10vh;
+  @media (prefers-color-scheme:dark){
+    :root{ --fg:#e9e9e9; --muted:#6f6f6f; --rule:#262626; --accent:#8fa6ff; }
+    html,body{ background:#111; }
   }
-  h1 { font-size:2rem; font-weight:650; letter-spacing:-.02em; margin:0 0 3rem; }
-  nav { display:grid; }
-  nav a {
-    display:grid; grid-template-columns:7.5rem 1fr; align-items:baseline; gap:1rem;
-    padding:.85rem 0; border-top:1px solid var(--line);
-    color:inherit; text-decoration:none;
-  }
-  nav a:last-child { border-bottom:1px solid var(--line); }
-  nav a .label { font-weight:550; }
-  nav a .meta { color:var(--muted); font-size:.92rem; }
-  nav a:hover .label { text-decoration:underline; text-underline-offset:3px; }
-  footer { margin-top:3.5rem; color:var(--muted); font-size:.85rem; }
+  *{ box-sizing:border-box; }
+  body{ font:17px/1.7 var(--sans); color:var(--fg); margin:0;
+        max-width:620px; margin-inline:auto; padding:16vh 32px 12vh; }
+  .name{ font-family:var(--serif); font-size:2.6rem; font-weight:600;
+         letter-spacing:-.01em; margin:0 0 .35rem; }
+  .tagline{ color:var(--muted); font-size:1rem; margin:0 0 3rem; }
+  section{ margin:0 0 2.6rem; }
+  .label{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+          color:var(--muted); margin:0 0 .9rem; }
+  .row{ display:flex; align-items:baseline; gap:1rem;
+        padding:.5rem 0; border-top:1px solid var(--rule); }
+  .row:last-child{ border-bottom:1px solid var(--rule); }
+  .row a{ color:var(--fg); text-decoration:none; font-weight:500; }
+  .row a:hover{ color:var(--accent); }
+  .row .note{ margin-left:auto; color:var(--muted); font-size:.9rem; }
+  footer{ margin-top:3.5rem; color:var(--muted); font-size:.82rem;
+          font-family:var(--serif); font-style:italic; }
 </style>
 </head>
 <body>
-  <h1>sagamiyun</h1>
-  <nav>
-    <a href="https://sagamiyun.me/blog"><span class="label">Blog</span><span class="meta">writing &amp; notes</span></a>
-    <a href="https://slark.sagamiyun.me"><span class="label">Slark</span><span class="meta">AI team OS</span></a>
-    <a href="https://resume.sagamiyun.me"><span class="label">Résumé</span><span class="meta">CV</span></a>
-    <a href="https://github.com/SagamiYun"><span class="label">GitHub</span><span class="meta">@SagamiYun</span></a>
-    <a href="https://github.com/a2o-labs"><span class="label">A2O Labs</span><span class="meta">research &amp; infra</span></a>
-    <a href="mailto:hi@sagamiyun.me"><span class="label">Email</span><span class="meta">hi@sagamiyun.me</span></a>
-  </nav>
+  <p class="name">sagamiyun</p>
+  <p class="tagline">edge &amp; on-prem AI infra · Tokyo</p>
+
+  <section>
+    <p class="label">Spaces</p>
+    <div class="row"><a href="https://sagamiyun.me/blog">Blog</a><span class="note">writing &amp; notes</span></div>
+    <div class="row"><a href="https://slark.sagamiyun.me">Slark</a><span class="note">AI team OS</span></div>
+    <div class="row"><a href="https://resume.sagamiyun.me">Résumé</a><span class="note">CV</span></div>
+  </section>
+
+  <section>
+    <p class="label">Code</p>
+    <div class="row"><a href="https://github.com/SagamiYun">GitHub</a><span class="note">@SagamiYun</span></div>
+    <div class="row"><a href="https://github.com/a2o-labs">A2O Labs</a><span class="note">research &amp; infra</span></div>
+  </section>
+
+  <section>
+    <p class="label">Contact</p>
+    <div class="row"><a href="mailto:me@sagamiyun.me">me@sagamiyun.me</a><span class="note">email</span></div>
+  </section>
+
   <footer>© <span id="y"></span> sagamiyun</footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
