@@ -38,15 +38,21 @@
   a.link{ display:grid; grid-template-columns:1.2rem 9.5rem 1fr; align-items:baseline; gap:.7rem;
     text-decoration:none; color:var(--txt); font-family:var(--mono);
     border:1px solid var(--border); border-radius:8px; padding:.85rem 1rem;
-    background:var(--card); transition:all 150ms cubic-bezier(.4,0,.2,1); }
-  a.link:hover{ border-color:var(--border-h); transform:translateX(3px);
-    box-shadow:0 0 24px rgba(167,139,250,.10); }
-  a.link .mark{ color:var(--muted); }
-  a.link:hover .mark{ color:var(--accent); }
-  a.link .gr{ font-weight:600; letter-spacing:.12em; font-size:1.02rem; }
-  a.link:hover .gr{ color:var(--accent); text-shadow:0 0 16px rgba(167,139,250,.4); }
+    background:var(--card);
+    transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  a.link:hover, a.link:focus-visible{ border-color:var(--border-h);
+    background:#111116; box-shadow:0 0 24px rgba(167,139,250,.14); outline:none; }
+  a.link .mark{ color:var(--muted); display:inline-block;
+    transition: color 150ms ease, transform 150ms cubic-bezier(.4,0,.2,1);
+    will-change: transform; }
+  a.link:hover .mark, a.link:focus-visible .mark{ color:var(--accent); transform:translateX(3px); }
+  a.link .gr{ font-weight:600; letter-spacing:.12em; font-size:1.02rem;
+    transition: color 150ms ease, text-shadow 150ms ease; }
+  a.link:hover .gr, a.link:focus-visible .gr{ color:var(--accent); text-shadow:0 0 16px rgba(167,139,250,.4); }
   a.link .en{ margin-left:auto; color:var(--sec); font-size:.78rem; letter-spacing:.05em;
     text-transform:uppercase; }
+  a.link:focus-visible{ border-color:var(--accent); box-shadow:0 0 0 2px rgba(167,139,250,.4), 0 0 24px rgba(167,139,250,.2); }
   footer{ position:relative; z-index:3; font-family:var(--mono); font-size:.72rem; letter-spacing:.25em;
     text-transform:uppercase; color:var(--muted); margin-top:3.4rem; }
   @media(max-width:480px){ a.link{ grid-template-columns:1.2rem 1fr; } a.link .en{ display:none; } }
