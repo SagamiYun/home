@@ -51,7 +51,9 @@
     transition: color 150ms ease, text-shadow 150ms ease; }
   a.link:hover .gr, a.link:focus-visible .gr{ color:var(--accent); text-shadow:0 0 16px rgba(167,139,250,.4); }
   a.link .en{ margin-left:auto; color:var(--sec); font-size:.78rem; letter-spacing:.05em;
-    text-transform:uppercase; }
+    text-transform:uppercase; transition:color 150ms ease; }
+  a.link:hover .en, a.link:focus-visible .en{ color:var(--txt); }
+  a.link[href^="mailto:"] .en{ text-transform:lowercase; }
   a.link:focus-visible{ border-color:var(--accent); box-shadow:0 0 0 2px rgba(167,139,250,.4), 0 0 24px rgba(167,139,250,.2); }
   footer{ position:relative; z-index:3; font-family:var(--mono); font-size:.72rem; letter-spacing:.25em;
     text-transform:uppercase; color:var(--muted); margin-top:3.4rem; }
@@ -70,7 +72,7 @@
     <a class="link" href="https://resume.sagamiyun.me"><span class="mark">&gt;</span><span class="gr">ΒΙΟΣ</span><span class="en">Résumé · CV</span></a>
     <a class="link" href="https://github.com/SagamiYun"><span class="mark">&gt;</span><span class="gr">ΕΡΓΑ</span><span class="en">GitHub · @SagamiYun</span></a>
     <a class="link" href="https://github.com/a2o-labs"><span class="mark">&gt;</span><span class="gr">ΕΡΓΑΣΤΗΡΙΟΝ</span><span class="en">A2O Labs · research</span></a>
-    <a class="link" href="mailto:kit.kyo@a2o-labs.com"><span class="mark">&gt;</span><span class="gr">ΕΡΜΗΣ</span><span class="en">kit.kyo@a2o-labs.com</span></a>
+    <a class="link" href="mailto:sagamiyun@a2o-labs.com"><span class="mark">&gt;</span><span class="gr">ΕΡΜΗΣ</span><span class="en">sagamiyun@a2o-labs.com</span></a>
   </nav>
 
   <footer>// κένωσις · <span id="y"></span> sagamiyun</footer>
